@@ -1,0 +1,494 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <meta name="google-site-verification" content="nG1m_klJ0CeENnBSE9X8DdtwkvXtbE74vxFv220zfjE"/>
+    <style>
+   
+       
+        /* Style for the polaroid container */
+        .polaroid-container {
+          display: flex;
+          flex-direction: row;
+          gap: 20px; /* Space between each polaroid */
+          padding: 10px;
+          width: 100%; /* Full width */
+          max-width: 800px; /* Maximum width to maintain structure */
+
+      }
+
+      .polaroid {
+          border-left: 10px solid black; /* Left-side border */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+          width: 100%; /* Make the polaroid full width */
+          text-align: left; /* Align text to the left */
+          background-color: rgb(0, 0, 0); /* Background for polaroid */
+          position: relative;
+          z-index: 1;
+          padding: 10px; /* Added padding for content */
+          transition: border-color 0.5s ease; /* Smooth transition for border color */
+      }
+
+      .polaroid img {
+          width: 100%;
+          height: auto;
+          transition: opacity 0.5s ease-in-out; /* Fade-in animation */
+          opacity: 0; /* Start with hidden image */
+      }
+
+      /* Style for the container */
+      .container {
+          padding: 10px 15px; /* Padding for the content */
+          transition: opacity 0.5s ease-in-out; /* Fade-in animation */
+          opacity: 0; /* Start with hidden content */
+          background-color: black; /* Background for the content */
+          border: 3px solid transparent; /* Transparent border for animation */
+          transition: border-color 0.5s ease; /* Smooth transition for border color */
+          margin-top: 10px; /* Spacing above the content */
+          padding-right:40px;
+      }
+
+      /* Animation for details open/close */
+      details[open] .polaroid {
+          border-color: rgba(127, 7, 129, 1); /* Set border color on open */
+      }
+
+      details[open] .container {
+          opacity: 1; /* Show content */
+          border-color: rgba(127, 7, 129, 1); /* Set border color on open */
+          padding: 10px; /* Ensure content has padding */
+          transition-delay: 0.5s;
+      }
+
+      /* Animation for image opacity */
+      details[open] .polaroid img {
+          opacity: 1; /* Fade in the image */
+          transition-delay: 0.5s;
+      }
+
+      details {
+          cursor: pointer; /* Change cursor to pointer for details */
+      }
+
+      hr {
+        border: none;
+        height: 2px;
+        background-color: #000000;
+        margin: 0;
+        
+
+      }
+      .Projects {
+        font-size: 30px;
+        background: linear-gradient(90deg, rgba(127,7,129,1) 0%, rgba(204,15,124,1) 43%, rgba(106,1,210,0.95) 100%);
+        background-size: 200%;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: animate-gradient 2.5s linear infinite;
+        padding-left:40%;
+      }
+
+      
+     
+    @media only screen and (min-width:600px) {
+      nav {
+        background-color: black;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: top 0.3s ease;
+    }
+    
+    .nav-container {
+        display: flex; /* Make logo and links sit in a row */
+        align-items: center; /* Vertically align items */
+        justify-content: space-between; /* Add space between logo and links */
+    }
+    
+    .nav-logo {
+        width: 50px;
+        height: 50px;
+        margin-right: 20px; /* Add space between logo and links */
+    }
+    
+    .nav-links {
+        display: flex; /* Make the links sit in a row */
+        gap: 30px; /* Add space between the links */
+    }
+    
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    nav a svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+    }
+    
+    nav a:hover {
+        color: #ff6347;
+    }
+
+    }
+    @media only screen and (max-width:600px) {
+      nav {
+        background-color: black;
+        padding: 10px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: top 0.3s ease;
+    }
+    
+    .nav-container {
+        display: flex; /* Make logo and links sit in a row */
+        align-items: center; /* Vertically align items */
+        justify-content: space-between; /* Add space between logo and links */
+    }
+    
+    .nav-logo {
+       display: none;
+    }
+    
+    .nav-links {
+        display: flex; /* Make the links sit in a row */
+        gap: 30px; /* Add space between the links */
+    }
+    
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        display: flex;
+        align-items: center;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    
+    nav a svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+    }
+    
+    nav a:hover {
+        color: #ff6347;
+    }
+
+    }
+   
+
+      /* Container for the progress bar */
+      .progress-container {
+        width: 100%;
+        background-color: #f3f3f3;
+        border-radius: 25px;
+        box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        margin: 20px 0;
+    }
+
+    /* The animated bar */
+    .progress-bar {
+        height: 30px;
+        width: 0;
+        background: rgb(127,7,129);
+        background: linear-gradient(90deg, rgba(127,7,129,1) 0%, rgba(204,15,124,1) 43%, rgba(106,1,210,0.95) 100%, rgba(180,59,11,1) 100%);
+        border-radius: 25px;
+        color: white;
+        font-weight: bold;
+        transition: width 1.5s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0; /* Initially hidden */
+    }
+
+    /* Animation for the progress bar */
+    @keyframes progress-animation {
+        0% {
+            width: 0;
+            opacity: 0; /* Start with hidden text */
+        }
+        100% {
+            opacity: 1; /* Fully reveal text */
+        }
+    }
+
+    /* Specific width percentages for each skill */
+    .java {
+        animation: progress-animation 2s forwards;
+        width: 40%; /* Java progress */
+    }
+    .htmlcss {
+        animation: progress-animation 2s forwards;
+        width: 60%; /* HTML/CSS progress */
+    }
+    .javascript {
+        animation: progress-animation 2s forwards;
+        width: 20%; /* JavaScript progress */
+    }
+    .mysql {
+        animation: progress-animation 2s forwards;
+        width: 70%; /* MySQL progress */
+    }
+    .renpy {
+        animation: progress-animation 2s forwards;
+        width: 70%; /* Ren'Py progress */
+    }
+    .python {
+        animation: progress-animation 2s forwards;
+        width: 50%; /* Python progress */
+    }
+    .ml-ai {
+        animation: progress-animation 2s forwards;
+        width: 10%; /* Machine Learning/AI progress */
+ 
+    }
+    .progress::hover {
+      filter: brightness(1) contrast(1.3);
+
+    }
+       .contact-container {
+      display: flex; /* Enable flexbox */
+      align-items: center; /* Center items vertically */
+      margin: 20px 0; /* Spacing for top and bottom */
+  }
+
+  .contact-icon {
+      width: 50px; /* Fixed width for the icon */
+      height: 50px; /* Fixed height for the icon */
+      margin-right: 10px; /* Space between icon and text */
+  }
+
+ 
+    </style>
+    <style>
+      body, h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif}
+      .w3-row-padding img {margin-bottom: 12px}
+      .w3-sidebar {width: 120px; background: #050004;}
+      #main {margin-left: 120px}
+      @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+      html {scroll-behavior: smooth;}
+      @media only screen and (max-width:600px) {
+        .logo {
+        display:none;
+        }
+        }
+      .responsive {width: 100%; height: auto;}
+    </style>
+
+    <title>@shiro portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jemmer almoneda - Programmer and Game dev">
+    <meta name="keywords" content="Jemmer Almoneda, Programmer,Game dev, Portfolio">
+    <meta name="author" content="@shiros">
+   
+
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="portfolio/favicon.ico" type="image/x-icon">
+  </head>
+  <body class="w3-black">
+
+   <!-- Navigation Bar -->
+   <nav>
+    <div class="nav-container"> <!-- Wrap logo and links inside a flex container -->
+        <img src="/logo.png" width="50" height="50" alt="Logo" class="nav-logo">
+        <div class="nav-links"> <!-- Keep this div for easier alignment -->
+            <a href="#home">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: white; margin-right: 5px;">
+                    <path d="M12.71 2.29a1 1 0 0 0-1.42 0l-9 9a1 1 0 0 0 0 1.42A1 1 0 0 0 3 13h1v7a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7h1a1 1 0 0 0 1-1 1 1 0 0 0-.29-.71zM6 20v-9.59l6-6 6 6V20z"></path>
+                </svg>
+                Home
+            </a>
+            <a href="#Photos">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:white; margin-right:5px;">
+                    <path d="M20 2H6c-1.206 0-3 .799-3 3v14c0 2.201 1.794 3 3 3h15v-2H6.012C5.55 19.988 5 19.806 5 19s.55-.988 1.012-1H21V3a1 1 0 0 0-1-1zM9.503 5a1.503 1.503 0 1 1 0 3.006 1.503 1.503 0 0 1 0-3.006zM12 13H7l3-3 1.5 1.399L14.5 8l3.5 5h-6z"></path>
+                </svg>
+                Photos
+            </a>
+            <a href="#about">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:white; margin-right:5px;">
+                    <path d="M20 3H4c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2zM4 19V5h7v14H4zm9 0V5h7l.001 14H13z">
+
+                    </path><path d="M15 7h3v2h-3zm0 4h3v2h-3z"></path></svg>
+                    About
+            </a>
+            <a href="#contact">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill:white; margin-right:5px;">
+                    <path d="M21 2H6a2 2 0 0 0-2 2v3H2v2h2v2H2v2h2v2H2v2h2v3a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1zm-8 2.999c1.648 0 3 1.351 3 3A3.012 3.012 0 0 1 13 11c-1.647 0-3-1.353-3-3.001 0-1.649 1.353-3 3-3zM19 18H7v-.75c0-2.219 2.705-4.5 6-4.5s6 2.281 6 4.5V18z">
+
+                </path></svg>
+                Contact
+            </a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar" width="10">
+      <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+        <a href="#home" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+        <a href="#Photos" class="w3-bar-item w3-button" style="width:25% !important">PROJECTS</a>
+        <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+      </div>
+    </div>
+
+    <!-- Page Content -->
+    <section>
+    <div class="w3-padding-large" id="home">
+      <!-- Header/Home -->
+      <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+        <h1 class="w3-jumbo"><span class="w3-hide-small">@</span> Shiro</h1>
+        <p>Wanna be programmer.</p>
+        <img src="logo.png" alt="boy" class="w3-image responsive" width="992" height="1108">
+      </header>
+      </section>
+     
+
+      <!-- About Section -->
+      <section>
+      <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+        <h2 class="w3-text-light-grey">@Shiro</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <p>Uhh this portfolio is just for fun so yeah nothing really interesting but I'll be updating it once in a while tee hee~
+        </p>
+        
+        <h1>Progress Bar</h1>
+
+        <div class="progress-container">
+            <div class="progress-bar java">JAVA</div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar htmlcss">HTML, CSS </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar javascript">JavaScript</div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar mysql">MySQL </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar renpy">Ren'Py </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar python">Python </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar ml-ai">ML/AI</div>
+        </div>
+        </section>
+         
+
+ <!-- My Projects Section -->
+<div class="Projects" style="text-align: center; padding-left: 0;">
+    <h2 style="text-align: center;">My Projects</h2>
+    <hr style="width:150px; margin: 10px auto;" class="w3-opacity">
+</div>
+
+<!-- Grid for photos -->
+<section>
+    <h2 id="Photos" style="text-align: center;">Java Projects</h2>
+    <div class="polaroid-container">
+        <details style="padding-left: 15px;">
+            <summary>Java Banking</summary>
+            <div class="polaroid">
+                <img src="./javabank.png" alt="Java Banking Project" style="width:100%">
+                <div class="container">
+                    <p>This Java Banking app simulates transactions, account management, and interest calculations. It demonstrates OOP concepts and file handling in Java.</p>
+                </div>
+            </div>
+        </details>
+
+        <details style="padding-left: 15px;">
+            <summary>Java Calculator</summary>
+            <div class="polaroid">
+                <img src="./JavaCalc.png" alt="Java Calculator" style="width:100%">
+                <div class="container">
+                    <p>A basic Java calculator capable of performing addition, subtraction, multiplication, and division. It demonstrates Java's GUI framework using Swing.</p>
+                </div>
+            </div>
+        </details>
+
+        <details style="padding-left: 15px;">
+            <summary>Guessing Game</summary>
+            <div class="polaroid">
+                <img src="./guessinggame.png" alt="Guessing Game" style="width:100%">
+                <div class="container">
+                    <p>This Java-based guessing game allows users to guess a randomly generated number. It's a simple application that showcases basic control flow and input handling in Java.</p>
+                </div>
+            </div>
+        </details>
+    </div>
+</section>
+
+<!-- Web Projects Section -->
+<section>
+    <h2 style="text-align: center;">Web Projects</h2>
+    <div class="polaroid-container">
+        <details style="padding-left: 15px;">
+            <summary>Apple Home Page</summary>
+            <div class="polaroid">
+                <img src="./Screenshot_93_.png" alt="Apple Home Page Clone" style="width:100%">
+                <div class="container">
+                    <a href="https://catbytes.w3spaces.com/index-copy.html
+
+">Link to the site</a>
+                    <p>This is a clone of the Apple homepage But using real apples, built using HTML,and CSS.</p>
+                </div>
+            </div>              
+</section>
+
+<!-- Game Projects Section -->
+<section>
+    <h2 style="text-align: center;">Game Projects</h2>
+    <div class="polaroid-container">
+        <details style="padding-left: 15px;">
+            <summary>Love and Code </summary>
+            <div class="polaroid">
+                <img src="./visual.png" alt="Love and Code" style="width:100%">
+                <div class="container">
+                    <a href="https://shiroi26.itch.io/digital-love">Click me to view</a>
+                    <p>A Visual novel built using Ren'py engine and python. Setting is set around to a high school romcom with progamming languange education involved.</p>
+                </div>
+            </div>
+        </details>
+    </div>
+</section>
+
+
+        
+      <!-- Contact Section -->
+       <section>
+      <div class="contact-container"id="contact"> <h2>Contacts</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 24 24" class="contact-icon" style="fill: white;">
+              <path d="M17 14a5 5 0 0 0 2.71-.81L20 13a3.16 3.16 0 0 0 .45-.37l.21-.2a4.48 4.48 0 0 0 .48-.58l.06-.08a4.28 4.28 0 0 0 .41-.76 1.57 1.57 0 0 0 .09-.23 4.21 4.21 0 0 0 .2-.63l.06-.25A5.5 5.5 0 0 0 22 9V2l-3 3h-4l-3-3v7a5 5 0 0 0 5 5zm2-7a1 1 0 1 1-1 1 1 1 0 0 1 1-1zm-4 0a1 1 0 1 1-1 1 1 1 0 0 1 1-1z"></path>
+              <path d="M11 22v-5H8v5H5V11.9a3.49 3.49 0 0 1-2.48-1.64A3.59 3.59 0 0 1 2 8.5 3.65 3.65 0 0 1 6 5a1.89 1.89 0 0 0 2-2 1 1 0 0 1 1-1 1 1 0 0 1 1 1 3.89 3.89 0 0 1-4 4C4.19 7 4 8.16 4 8.51S4.18 10 6 10h5.09A6 6 0 0 0 19 14.65V22h-3v-5h-2v5z"></path>
+          </svg>
+      </div>
+        <hr style="width:200px" class="w3-opacity">
+
+        <div class="w3-section">
+          <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>FB: Jemmer Almoneda</p>
+          <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> GMAIL: Jemmeralmoneda58@gmail.com</p>
+          <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Itch.io:Shiroi26</p>
+        </div><br>
+
+       
+
+       
+      <!-- End Contact Section -->
+      <!--verify-->
+     
+    </section>
+    </body>
+    </html>

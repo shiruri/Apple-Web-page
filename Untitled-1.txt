@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+       .polaroid img:hover {
+            filter: brightness(1) contrast(1.3); /* Brighter and higher contrast on hover */
+        }
+         .polaroid img {
+            width: 100%;
+
+        }
+          .container {
+            padding: 10px;
+        }
+
+        /* Style for Polaroid photos */
+        .polaroid-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding-top: 40px;
+            flex-wrap: wrap; 
+        }
+
+        .polaroid {
+            width: 250px;
+           
+            text-align: center;
+        }
+
+        .container {
+            padding: 10px;
+        }
+
+        .container2 {
+            padding-top: 10px;
+        }
+        .polaroid::after {
+        border-radius:10px;
+        position:relative;
+        height: 100%;
+        width:100%;
+        background-image: conic-gradient(red,blue,green);
+        top:50%;
+        left:60%;
+        translate: -50% -50%;
+        z-index:-1;
+        padding:3px;
+        border-radius:10px;
+        
+        }
+
+    </style>
+    <title>@shiro portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jemmer almoneda - Programmer and Game dev">
+    <meta name="keywords" content="Jemmer Almoneda, Programmer,Game debr, Portfolio">
+    <meta name="author" content="@shiros">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="portfolio/favicon.ico" type="image/x-icon">
+    <style>
+      body, h1, h2, h3, h4, h5, h6 {font-family: "Montserrat", sans-serif}
+      .w3-row-padding img {margin-bottom: 12px}
+      .w3-sidebar {width: 120px; background: #050004;}
+      #main {margin-left: 120px}
+      @media only screen and (max-width: 600px) {#main {margin-left: 0}}
+      html {scroll-behavior: smooth;}
+      .responsive {width: 100%; height: auto;}
+    </style>
+  </head>
+  <body class="w3-black">
+
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+      <!-- Avatar image in top left corner -->
+      <img src="logo.png" alt="Logo" style="width:100%">
+      <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+        <i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p>
+      </a>
+      <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-user w3-xxlarge"></i>
+        <p>ABOUT</p>
+      </a>
+      <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-eye w3-xxlarge"></i>
+        <p>PROJECTS</p>
+      </a>
+      <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
+        <i class="fa fa-envelope w3-xxlarge"></i>
+        <p>CONTACT</p>
+      </a>
+    </nav>
+
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+      <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
+        <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
+        <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
+        <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PROJECTS</a>
+        <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
+      </div>
+    </div>
+
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+      <!-- Header/Home -->
+      <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
+        <h1 class="w3-jumbo"><span class="w3-hide-small">@</span> Shiro</h1>
+        <p>Wanna be programmer.</p>
+        <img src="logo.png" alt="boy" class="w3-image responsive" width="992" height="1108">
+      </header>
+
+      <!-- About Section -->
+      <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+        <h2 class="w3-text-light-grey">@Shiro</h2>
+        <hr style="width:200px" class="w3-opacity">
+        <p>Uhh this portfolio is just for fun so yeah nothing really interesting but I'll be updating it once in a while tee hee~
+        </p>
+        <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
+        <p class="w3-wide">Java</p>
+        <div class="w3-white">
+          <div class="w3-dark-grey" style="height:28px;width:40%"></div>
+        </div>
+        <p class="w3-wide">Web</p>
+        <div class="w3-white">
+          <div class="w3-dark-grey" style="height:28px;width:30%"></div>
+        </div>
+        <p class="w3-wide">Ren'py</p>
+        <div class="w3-white">
+          <div class="w3-dark-grey" style="height:28px;width:60%"></div>
+        </div><br>
+        <p class="w3-wide">SQL</p>
+        <div class="w3-white">
+            <div class="w3-dark-grey" style="height:28px;width:70%"></div>
+          </div><br>
+    
+         <p class="w3-wide">Python</p>
+        <div class="w3-white">
+            <div class="w3-dark-grey" style="height:28px;width:40%"></div>
+          </div><br>
+         <p class="w3-wide">Machine learning</p>
+        <div class="w3-white">
+            <div class="w3-dark-grey" style="height:28px;width:20%"></div>
+          </div><br>
+          
+      
+
+      <!-- Portfolio Section -->
+       <div class="Projects">
+     <h2>My Projects</h2>
+     <hr>      
+    </div>
+
+        <!-- Grid for photos -->
+
+       <section>
+        <h2 id="Photos">Photos</h2>
+        <div class="polaroid-container">
+            <div class="polaroid">
+                <img src="./gala.jpg" alt="Gala Apple" style="width:100%">
+                <div class="container">
+                    <p>Gala Apple</p>
+                    <details>
+                        <summary>Details</summary>
+                        <p>Gala apples are known for their mild and sweet flavor, making them perfect for snacking. Their thin skin and juicy, crisp texture make them a great choice for salads or even homemade applesauce.</p>
+                     </details>
+                </div>
+            </div>
+            <div class="polaroid">
+                <img src="./fuji.jpg" alt="Fuji Apple" style="width:100%">
+                <div class="container2">
+                    <p>Fuji Apple</p>
+                        <details>
+                            <summary>Details</summary>
+                            <p>Fuji apples are extremely sweet and have a firm, crisp texture. They are excellent for fresh eating but also hold up well when baked. These apples are one of the most popular varieties in the world due to their versatility.</p>
+                         </details>
+                </div>
+            </div>
+            <div class="polaroid">
+                <img src="./crisp.jpg" alt="Honeycrisp Apple" style="width:100%">
+                <div class="container3">
+                    <p>Honeycrisp Apple</p>
+                        <details>
+                            <summary>Details</summary>
+                            <p>The Honeycrisp apple is known for its explosive crunch and well-balanced sweetness. It’s ideal for snacking, adding to salads, or pairing with cheese. Its juicy texture makes it a crowd favorite.</p>
+                         </details>
+                </div>
+            </div>
+            <div class="polaroid">
+                <img src="./granny.jpg" alt="Grannysmith Apple" style="width:100%">
+                <div class="container4">
+                    <p>Grannysmith Apple</p>
+                    <details>
+                        <summary>Details</summary>
+                        <p>Granny Smith apples are famous for their tart, tangy flavor and firm flesh. These apples are perfect for pies and other baked goods, as they maintain their texture during cooking. They are also a great choice for a refreshing, tangy snack.</p>
+                     </details>
+                </div>
+            </div>
+        </div>
+    </section>
+        
+        <!-- End photo grid -->
+        </div>
+      <!-- End Portfolio Section -->
+      </div>
+
+      <!-- Contact Section -->
+      <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
+        <h2 class="w3-text-light-grey">Contacts</h2>
+        <hr style="width:200px" class="w3-opacity">
+
+        <div class="w3-section">
+          <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i>FB: Jemmer Almoneda</p>
+          <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> GMAIL: Jemmeralmoneda58@gmail.com</p>
+          <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Itch.io:Shiroi26</p>
+        </div><br>
+        <p>Moew nyann nyann :3:</p>
+
+       
+      <!-- End Contact Section -->
+      </div>
+      
+    
